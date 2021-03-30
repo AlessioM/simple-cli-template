@@ -4,7 +4,10 @@ from pydantic import BaseSettings
 
 
 class Settings(BaseSettings):
-    default_number_b: int = 100
+    min_detection_confidence: float = 0.5
+    min_tracking_confidence: float = 0.5
+    face_history: int = 10
+    liveness_threshold: float = 0.2
 
 
 # pydantic raises an error if secrets dir does not exist
